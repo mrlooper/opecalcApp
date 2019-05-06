@@ -1,0 +1,23 @@
+ion-toolbar {
+    --background: linear-gradient(to left, var(--theme-toolbar-gradient-color-1) 0%, var(--theme-toolbar-gradient-color-2) 100%);
+    --color: white;
+}
+
+[notification-button] {            
+    position: relative;
+    width: 42px;
+    top:1px;
+    right: 1px;
+    overflow: visible!important;
+    background: transparent !important;
+    color: white !important;
+}
+
+[notification-badge] {
+    background-color: red;
+    position: absolute;
+    top: -6px;
+    right: 0px;
+    border-radius: 100%;
+    font-size: 8px;
+}  

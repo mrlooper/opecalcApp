@@ -1,0 +1,93 @@
+<bp-toolbar titulo="INICIO" boton="menu"></bp-toolbar>
+
+<!--Fist Screen Content-->
+<ion-content has-header>
+
+  <ion-grid>
+
+    <ion-row>
+
+      <!-- ENVIOS_PAQUETERIA -->
+      <ion-col size="4"
+        *ngIf="mS.perfil_cliente && mS.perfil_cliente.num_envios_paqueteria_pendientes > 0">
+        <button boton-menu (click)="onClickMenu('envios-paqueteria')">
+          <ion-icon src="/assets/icon/truck.svg"></ion-icon>
+          <span texto-boton>Despositar env&iacute;os
+            ({{mS.perfil_cliente.num_envios_paqueteria_pendientes}})</span>
+        </button>
+      </ion-col>
+      <!-- FIN: ENVIOS_PAQUETERIA -->
+
+      <!-- TIENDA -->
+      <ion-col size="4">
+        <button boton-menu>
+          <ion-icon src="/assets/icon/store.svg"></ion-icon>
+          <span texto-boton>Tienda</span>
+        </button>
+      </ion-col>
+      <!-- FIN: TIENDA -->
+
+      <!-- TAQUILLAS -->
+      <ion-col size="4">
+        <button boton-menu (click)="onClickMenu('taquillas')">
+          <ion-icon src="/assets/icon/taquilla.svg"></ion-icon>
+          <span texto-boton>Taquillas</span>
+        </button>
+      </ion-col>
+      <!-- FIN: TAQUILLAS -->
+
+      <!-- OFERTAS -->
+      <ion-col size="4">
+        <button boton-menu (click)="onClickMenu('ofertas')">
+          <ion-icon src="/assets/icon/offer.svg"></ion-icon>
+          <span texto-boton>Ofertas</span>
+        </button>
+      </ion-col>
+      <!-- FIN: OFERTAS -->
+
+      <!-- MENSAJES -->
+      <ion-col size="4">
+        <button boton-menu (click)="onClickMenu('mensajes')">
+          <ion-icon name="mail"></ion-icon>
+          <!--<ion-icon name="mail-unread" *ngIf="mS.perfil_cliente && mS.perfil_cliente.num_mensajes_pendientes > 0"></ion-icon>-->
+          <span texto-boton>Mensajes <span
+              *ngIf="mS.perfil_cliente && mS.perfil_cliente.num_mensajes_pendientes > 0">({{mS.perfil_cliente.num_mensajes_pendientes}})</span></span>
+        </button>
+      </ion-col>
+      <!-- FIN: MENSAJES -->
+
+      <!-- ENVIAR_PAQUETE -->
+      <ion-col size="4">
+        <button boton-menu (click)="onClickMenu('enviar-paquete')">
+          <ion-icon src="/assets/icon/package.svg"></ion-icon>
+          <span texto-boton>Enviar paquete</span>
+        </button>
+      </ion-col>
+      <!-- FIN: ENVIAR_PAQUETE -->
+
+      <!-- PEDIDOS_PERIODICOS -->
+      <ion-col size="4" *ngIf="mS.perfil_cliente && mS.perfil_cliente.num_lineas_pedidos_periodicos > 0">
+        <button boton-menu (click)="onClickMenu('pedidos-periodicos')">
+          <ion-icon>
+            <i class="icon icon-alarm"></i>
+          </ion-icon>
+          <span texto-boton>Pedidos Peri&oacute;dicos
+            <span>({{mS.perfil_cliente.num_lineas_pedidos_periodicos}})</span></span>
+        </button>
+      </ion-col>
+      <!-- FIN: PEDIDOS_PERIODICOS -->
+
+      <!-- ENVIOS -->
+      <ion-col size="4">
+        <button boton-menu (click)="onClickMenu('envios-paqueteria')">
+          <ion-icon src="/assets/icon/listado-envios.svg"></ion-icon>
+          <span texto-boton>Listado env&iacute;os</span>
+        </button>
+      </ion-col>
+      <!-- FIN: ENVIOS -->
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

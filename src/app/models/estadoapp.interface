@@ -1,0 +1,7 @@
+export interface IEstadoApp {
+    did: string,
+    cid: string,
+    id_zona: string,
+    taquilla: string
+}
+

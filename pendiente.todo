@@ -1,0 +1,5 @@
+☐ Grosor lineas formulario
+☐ Sustituir en ion-list no-lines por lines="none"
+☐ Sustituir atributos tamaño col-XX por size="X"
+☐ Comprobar que los botones tienen el atributo boton-mediano
+☐ Modificar texto **EN OFERTA** por badge

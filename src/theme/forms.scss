@@ -1,0 +1,45 @@
+[logo] {
+  overflow: hidden;
+  text-align: center;
+}
+
+[logo] img {
+  max-width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  float: none;
+}
+
+img {
+  max-width: 50px;
+  display: block;
+  text-align: right;
+  float: right;
+}
+
+ion-label {
+  --color: var(--theme-maincolors-primary);
+}
+
+ion-icon {
+  color: var(--theme-maincolors-primary);
+}
+
+ion-item {
+  --border-color: var(--theme-maincolors-primary);
+}
+
+.ion-color-formLabel {
+  --ion-color-base: var(--theme-maincolors-primary);
+}
+
+.form {
+  padding: 10px;
+  overflow: hidden;
+
+  [button-clear] {
+    margin-top: 15px;
+  }
+}

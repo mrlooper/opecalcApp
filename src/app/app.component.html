@@ -1,0 +1,54 @@
+<ion-app>
+  <ion-split-pane when="md">
+    <ion-menu>
+      <ion-header header-background-image [ngStyle]="{'background-image': 'url(' + params.background + ')'}">
+        <ion-thumbnail>
+          <img src="{{ params.image }}">
+        </ion-thumbnail>
+        <h2 item-title text-center>{{params.title}}</h2>
+        <h2 item-title text-center *ngIf="mS.taquilla != null">Taquilla: {{mS.taquilla}}</h2>
+        <h2 item-title text-center *ngIf="mS.cid == null">¡Registrese para ver todos los productos!</h2>
+    <!--<h2 error-title text-center>¡Registrese para ver todos los productos!</h2>-->
+      </ion-header>
+      <ion-content main-menu>
+        <ion-list no-margin no-padding lines="none">
+
+          <!-- REGISTRAR TELEFONO -->
+          <ion-item routerLink="/registrar-telefono" routerDirection="forward">
+            <ion-icon name="add" icon-menu-small></ion-icon>
+            <ion-label>Registro</ion-label>
+          </ion-item>
+
+          <!-- LISTADO DE TAQUILLAS -->
+          <ion-item routerLink="/listado-taquillas" routerDirection="forward">
+            <ion-icon src="/assets/icon/taquilla.svg" icon-menu-small></ion-icon>
+            <ion-label>Taquillas</ion-label>
+          </ion-item>
+
+          <!-- TIENDA -->
+          <ion-item routerLink="/listado-categorias-tienda" routerDirection="forward">
+            <ion-icon src="/assets/icon/store.svg" icon-menu-small></ion-icon>
+            <ion-label>Tienda</ion-label>
+          </ion-item>
+
+          <!-- OFERTAS -->
+          <ion-item routerLink="/listado-ofertas" routerDirection="forward">
+            <ion-icon src="/assets/icon/offer.svg" icon-menu-small></ion-icon>
+            <ion-label>Ofertas</ion-label>
+          </ion-item>
+
+          <!-- ENVIAR PAQUETE -->
+          <ion-item routerLink="/listado-tipos-envio-paqueteria" routerDirection="forward">
+            <ion-icon src="/assets/icon/package.svg" icon-menu-small></ion-icon>
+            <ion-label>Enviar paquete</ion-label>
+          </ion-item>
+          
+          
+          
+
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

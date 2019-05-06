@@ -1,0 +1,98 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import "./theme/main.scss";
+
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// Settings Style Main Meni
+[header-background-image] {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  @include darkening-blend-mode;
+
+  img {
+    padding-top: 40px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    z-index: 9;
+    max-width: 60px;
+  }
+
+  [item-title] {
+    color: theme-colors("textColors", "accent-first") !important;
+    position: relative;
+    z-index: 9;
+  }
+
+  [error-title] {
+    color: theme-colors("textColors", "accent-first") !important;
+    position: relative;
+    z-index: 9;
+  }
+}
+// Settings Main  Menu
+
+[main-menu] {
+  button {
+    padding-left: 30px;
+  }
+
+  .item-inner {
+    margin-left: 0 !important;
+  }
+
+  [icon-small] {
+    margin-top: 18px !important;
+  }
+
+  .icon-danger {
+    color: theme-colors("textColors", "danger") !important;
+    -webkit-text-stroke-color: theme-colors("textColors", "danger") !important;
+  }
+}
+// Settings Submenu
+
+[submenu] {
+  ion-label {
+    padding-left: 30px !important;
+  }
+}
+
+[bold] {
+  font-weight: bold;
+}
+
+[danger] {
+  color: theme-colors("textColors", "danger") !important;
+}
+
+ion-avatar {
+  min-width: 60px;
+  min-height: 60px;
+}
+

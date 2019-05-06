@@ -1,5 +1,7 @@
 {
-  "name": "opecalcApp",
-  "integrations": {},
-  "type": "ionic-angular"
+  "name": "OPECalc",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
 }

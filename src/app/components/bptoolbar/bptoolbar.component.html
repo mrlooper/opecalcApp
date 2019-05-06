@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- MENU -->
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="boton == 'menu'"></ion-menu-button>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <!-- end: MENU -->
+
+    <!-- TITULO -->
+    <ion-title bold>
+      {{ titulo }}
+    </ion-title>
+    <!-- end: TITULO -->
+
+    <!-- ENVIOS_PAQUETERIA -->
+    <ion-buttons slot="end"
+      *ngIf="mS.perfil_cliente && mS.perfil_cliente.num_envios_paqueteria_pendientes > 0">
+      <button notification-button ion-button clear (click)="openEnviosPaqueteria()">
+        <ion-icon name="cube"></ion-icon>
+        <ion-badge notification-badge color="danger">{{mS.perfil_cliente.num_envios_paqueteria_pendientes}}
+        </ion-badge>
+      </button>
+    </ion-buttons>
+    <!-- end: ENVIOS_PAQUETERIA -->
+
+    <!-- MENSAJES -->
+    <ion-buttons slot="end" *ngIf="mS.perfil_cliente && mS.perfil_cliente.num_mensajes_pendientes > 0">
+      <button notification-button ion-button clear (click)="openMensajes()">
+        <ion-icon name="mail"></ion-icon>
+        <ion-badge notification-badge color="danger">{{mS.perfil_cliente.num_mensajes_pendientes}}</ion-badge>
+      </button>
+    </ion-buttons>
+    <!-- end: MENSAJES -->
+
+    <!-- CARRITO -->
+    <ion-buttons slot="end" *ngIf="mS.pedido && mS.pedido.num_lineas > 0">
+      <button notification-button ion-button clear (click)="openCarrito()">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge notification-badge color="danger">{{mS.pedido.num_lineas}}</ion-badge>
+      </button>
+    </ion-buttons>
+    <!-- end: CARRITO -->
+
+  </ion-toolbar>
+</ion-header>

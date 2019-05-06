@@ -1,0 +1,147 @@
+[hlist-danger] {
+  font-size: $h1-font-size;
+  color: theme-colors("textColors", "danger") !important;
+  font-weight: 300;
+}
+
+[stock-label-ok] {
+  color: theme-colors("textColors", "success");
+  text-transform: uppercase;
+}
+
+[stock-label-low] {
+  color: theme-colors("textColors", "warning");
+  text-transform: uppercase;
+}
+
+[stock-label-out] {
+  color: theme-colors("textColors", "danger");
+  text-transform: uppercase;
+}
+
+button[boton-icono] {
+  border-top-color: theme-colors("textColors", "primary");
+  border-bottom-color: theme-colors("textColors", "primary");
+  border-left-color: theme-colors("textColors", "primary");
+  border-right-color: theme-colors("textColors", "primary");
+  color: theme-colors("textColors", "primary");
+  height: 30px !important;
+  background-color: transparent;
+}
+
+button[round] {
+  border-radius: 64px;
+}
+
+button[outline] {
+  border-width: 1px;
+  border-style: solid;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+button[outline-danger] {
+  border-width: 1px;
+  border-style: solid;
+  border-color: theme-colors("textColors", "danger");
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+[boton-icono] i {
+  color: theme-colors("textColors", "secondary");
+  -webkit-text-stroke-color: theme-colors("textColors", "secondary");
+}
+
+button[boton-icono-danger] {
+  border-top-color: theme-colors("textColors", "danger");
+  border-bottom-color: theme-colors("textColors", "danger");
+  border-left-color: theme-colors("textColors", "danger");
+  border-right-color: theme-colors("textColors", "danger");
+  color: theme-colors("textColors", "danger");
+  height: 30px !important;
+}
+
+[boton-icono-danger] i {
+  color: theme-colors("textColors", "danger");
+  -webkit-text-stroke-color: theme-colors("textColors", "danger");
+}
+
+[boton-mediano] {
+  min-width: 150px !important;
+  height: 2rem !important;
+  font-weight: bold;
+}
+
+.alert-dias-reparto .alert-checkbox-group {
+  max-height: 340px !important;
+}
+
+.alert-md.alert-producto-periodico .alert-message {
+  max-height: 100px !important;
+}
+
+.alert-md.alert-producto-periodico .alert-checkbox-group {
+  border: none;
+}
+
+[boton-menu] {
+  height: 100px !important;
+  border-radius: 20px !important;
+  text-transform: none !important;
+  width: 100%;
+  background-color: theme-colors("textColors", "secondary");
+  color: white;
+
+  i {
+    -webkit-text-stroke-color: white;
+  }
+
+  ion-icon {
+    font-size: 50px;
+    padding: 5px;
+  }
+
+  span[texto-boton] {
+    word-wrap: break-word;
+    margin: 0.3em;
+    display: block !important;
+    font-weight: bold;
+  }
+}
+
+.h1-success {
+  font-size: $h1-font-size;
+  color: theme-colors("textColors", "success");
+  font-weight: 300;
+}
+
+.h1-danger {
+  font-size: $h1-font-size;
+  color: theme-colors("textColors", "danger");
+  font-weight: 300;
+}
+
+.negrita {
+  font-weight: bold !important;
+}
+
+[icon-menu-small] {
+  color: theme-colors("textColors", "primary") !important;
+}
+
+[thumbnail-producto] {
+  min-width: 120px;
+  min-height: 120px;
+}
+
+[no-filter] {
+  filter: none;
+  -webkit-filter: none;
+}
+
+[thumbnail-round] {
+  --border-radius: 10px;
+}
