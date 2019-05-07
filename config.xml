@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
+    <name>OPE Calc</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -85,4 +85,8 @@
     <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" />
     <plugin name="cordova-plugin-uniquedeviceid" spec="1.3.2" />
     <plugin name="cordova-sqlite-storage" spec="3.1.0" />
+    <plugin name="cordova-plugin-admob-free" spec="0.26.0">
+        <variable name="ADMOB_APP_ID" value="ca-app-pub-5095935372980249~5695474497" />
+    </plugin>
+    <engine name="android" spec="7.1.4" />
 </widget>

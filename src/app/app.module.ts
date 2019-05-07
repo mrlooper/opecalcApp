@@ -20,6 +20,18 @@ import { StoreModule } from '@ngrx/store';
 import { appRerducers } from './store/reducers/app.reducers';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
+import { AdMobFree } from '@ionic-native/admob-free/ngx';
+import { AdmobFreeService } from './services/admobfree.service';
+
+/**
+ * IDs admob test
+Banner [ca-app-pub-3940256099942544/6300978111]
+Interstitial [ca-app-pub-3940256099942544/1033173712]
+Interstitial Video [ca-app-pub-3940256099942544/8691691433]
+Rewarded Video [ca-app-pub-3940256099942544/5224354917]
+Native Advanced [ca-app-pub-3940256099942544/2247696110]
+Native Advanced Video [ca-app-pub-3940256099942544/1044960115]
+ */
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +48,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     InAppBrowser,
     StatusBar,
     SplashScreen,
+    AdMobFree,
+    AdmobFreeService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     UniqueDeviceID,
     DialogService,
