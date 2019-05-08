@@ -16,11 +16,25 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { DialogService } from './services/dialog-service';
 import { ValidationService } from './services/validation';
-import { StoreModule } from '@ngrx/store';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { AdMobFree } from '@ionic-native/admob-free/ngx';
 import { AdmobFreeService } from './services/admobfree.service';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { Firebase } from '@ionic-native/firebase/ngx';
+import { FcmService } from './services/fcm.service';
+
+const config = {
+  apiKey: 'AIzaSyC4a0iRyN9SW8wcwGVmU_575KxIL6Og6OA',
+  authDomain: 'ope-calc.firebaseapp.com',
+  databaseURL: 'https://ope-calc.firebaseio.com',
+  projectId: 'ope-calc',
+  storageBucket: 'ope-calc.appspot.com',
+  messagingSenderId: '782774628404',
+  appId: '1:782774628404:web:63b0119a5845e1cc'
+};
 
 /**
  * IDs admob test
@@ -40,7 +54,9 @@ Native Advanced Video [ca-app-pub-3940256099942544/1044960115]
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule
   ],
   providers: [
     InAppBrowser,
@@ -51,7 +67,9 @@ Native Advanced Video [ca-app-pub-3940256099942544/1044960115]
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     UniqueDeviceID,
     DialogService,
-    ValidationService
+    ValidationService,
+    Firebase,
+    FcmService,
   ],
   bootstrap: [AppComponent]
 })

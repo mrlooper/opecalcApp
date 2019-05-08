@@ -4,6 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { MainService } from './services/main-service';
+import { FcmService } from './services/fcm.service';
+import { DialogService } from './services/dialog-service';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +32,9 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public mS: MainService
+    public mS: MainService,
+    private fcm: FcmService,
+    public dialogCtrl: DialogService
   ) {
 
     this.params = {
@@ -42,10 +46,23 @@ export class AppComponent {
     this.initializeApp();
   }
 
+  private notificationSetup() {
+    this.fcm.getToken();
+    this.fcm.onNotifications().subscribe(
+      (msg) => {
+        if (this.platform.is('ios')) {
+          this.dialogCtrl.presentToast(msg.aps.alert);
+        } else {
+          this.dialogCtrl.presentToast(msg.body);
+        }
+      });
+  }
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.notificationSetup();
     });
   }
 }

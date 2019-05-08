@@ -1,0 +1,15 @@
+https://medium.freecodecamp.org/how-to-get-push-notifications-working-with-ionic-4-and-firebase-ad87cc92394e
+https://github.com/arnesson/cordova-plugin-firebase/blob/master/README.md#google-play-services
+https://forum.ionicframework.com/t/ionic-4-cordova-run-android-firebase-error-all-of-a-sudden/163204/49
+
+ionic cordova plugin add cordova-plugin-firebase
+npm install @ionic-native/firebase
+npm install --save angularfire2 firebase
+
+# Registrar en Firebase la App (widgetid en config.xml)
+# Descargar google-services.json y poner en el raiz
+# Configurar app.module.ts
+
+cordova plugin add cordova-android-play-services-gradle-release  --variable PLAY_SERVICES_VERSION=+
+cordova plugin add cordova-android-firebase-gradle-release  --variable FIREBASE_VERSION=+
+

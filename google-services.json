@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "782774628404",
+    "firebase_url": "https://ope-calc.firebaseio.com",
+    "project_id": "ope-calc",
+    "storage_bucket": "ope-calc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782774628404:android:1bc22d9ff6304d6e",
+        "android_client_info": {
+          "package_name": "com.survoz.opecalc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782774628404-r3ngrpqbn975q0nhc62r3rtj8f82lsdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRizr7t1PMQMZ5ogQNaGGsN4chdxmqwS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782774628404-r3ngrpqbn975q0nhc62r3rtj8f82lsdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
