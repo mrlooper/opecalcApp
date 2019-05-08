@@ -19,6 +19,10 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
     this.plantillas = [];
   }
 
+  onNuevaPlantilla(){
+    this.navCtrl.navCtrl('nueva-plantilla-usuario');
+  }
+
   cargarPlantillas() {
     this.mS.api_obtener_plantillas_usuario((data) => {
       if (data.codigo == 0) {
