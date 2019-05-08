@@ -6,24 +6,27 @@ import { AngularFirestore } from 'angularfire2/firestore';
 @Injectable()
 export class FcmService {
 
+    public token: string;
+
     constructor(private firebase: Firebase,
         private afs: AngularFirestore,
-        private platform: Platform) { }
+        private platform: Platform) {
+            this.token = '';
+        }
 
     async getToken() {
-        let token;
 
         if (this.platform.is('android')) {
-            token = await this.firebase.getToken();
+            this.token = await this.firebase.getToken();
         }
 
         if (this.platform.is('ios')) {
-            token = await this.firebase.getToken();
+            this.token = await this.firebase.getToken();
             await this.firebase.grantPermission();
         }
 
-        console.log(token);
-        this.saveToken(token);
+        console.log('Token FCM: ' + this.token);
+        this.saveToken(this.token);
     }
 
     private saveToken(token) {

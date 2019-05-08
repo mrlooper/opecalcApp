@@ -6,6 +6,7 @@ import { LoadingController } from '@ionic/angular';
 import { BPEvent } from '../classes/bpevent';
 import { AppSettings } from './app-settings';
 import { DialogService } from './dialog-service';
+import { FcmService } from './fcm.service';
 
 
 /*
@@ -18,6 +19,7 @@ import { DialogService } from './dialog-service';
 export class MainService {
     public did: string; /* Device ID */
     public cid: string; /* Client ID */
+    public fcmToken: string; /* Token FCM */
     public datos_usuario = null;
     public argsQueue: Array<any>;
 
@@ -27,7 +29,8 @@ export class MainService {
         private storage: Storage,
         private http: HttpClient,
         public loadingCtrl: LoadingController,
-        public dlgService: DialogService
+        public dlgService: DialogService,
+        public fcmService: FcmService
     ) {
 
         console.log('Inicializando servicio MainService');
@@ -36,14 +39,6 @@ export class MainService {
         /* Cargamos datos almacenados */
         this.cargar_datos();
 
-        // this.cargar_categorias();
-
-        this.uniqueDeviceID.get()
-            .then((uuid: any) => console.log(uuid))
-            .catch((error: any) => {
-                console.log(error);
-                // this.generar_DID();
-            });
     }
 
     nuevoEvento(evento) {
@@ -84,14 +79,22 @@ export class MainService {
         ]).then((vals) => {
             [did, cid] = vals;
 
-            /* Generamos DID si no lo tenemos */
-            if (!did) {
-                this.generar_DID();
-            }
-
             /* Referencias locales */
             this.cid = cid;
             this.did = did;
+
+            /* Generamos DID si no lo tenemos */
+            if (!did) {
+                this.uniqueDeviceID.get()
+                .then((uuid: any) => {
+                    console.log('Device UUID: ' + uuid);
+                    this.did = uuid;
+                })
+                .catch((error: any) => {
+                    console.log(error);
+                    this.generar_DID();
+                });
+            }
 
         });
 
@@ -122,7 +125,8 @@ export class MainService {
 
     api_obtener_plantillas_usuario(cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-plantillas-usuario', {
-            'cid': this.cid
+            'cid': this.did,
+            'fcmtk': this.fcmService.token
         }, function (data) {
             cb && cb(data);
         }, mostrar_dialogo);
