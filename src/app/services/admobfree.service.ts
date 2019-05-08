@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import {
     AdMobFree,
     AdMobFreeBannerConfig,
@@ -6,6 +7,7 @@ import {
     AdMobFreeRewardVideoConfig
 } from '@ionic-native/admob-free/ngx';
 import { Platform } from '@ionic/angular';
+import { AppSettings } from './app-settings';
 
 
 @Injectable()
@@ -31,6 +33,11 @@ export class AdmobFreeService {
         private admobFree: AdMobFree,
         public platform: Platform
     ) {
+
+        if ( !AppSettings.SHOW_ADS ) {
+            console.warn('Ads disabled');
+            return;
+        }
 
         platform.ready().then(() => {
 
@@ -68,7 +75,6 @@ export class AdmobFreeService {
                 }).catch(e => alert(e));
         });
     }
-
 
     BannerAd() {
         let bannerConfig: AdMobFreeBannerConfig = {

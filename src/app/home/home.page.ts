@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MainService } from '../services/main-service';
 import { DialogService } from '../services/dialog-service';
 import { AdmobFreeService } from '../services/admobfree.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,14 @@ import { AdmobFreeService } from '../services/admobfree.service';
 })
 export class HomePage {
 
-  constructor(public mS: MainService,
+  constructor(public navCtrl: NavController,
+    public mS: MainService,
     public dialogCtrl: DialogService,
     private admobFreeService: AdmobFreeService) {
-    /*this.plt.ready().then(() => {
-      admob.banner.show({ id: 'ca-app-pub-3940256099942544/6300978111' });
-    });*/
+  }
+
+  onClickMisPlantillas() {
+    this.navCtrl.navigateForward('listado-plantillas-usuario');
   }
 
   onClick() {

@@ -1,6 +1,7 @@
 export const AppSettings = Object.freeze({
     "IS_FIREBASE_ENABLED":false,
     "SHOW_START_WIZARD": false,
+    "SHOW_ADS": false,
     "SUBSCRIBE": false,
     "TOAST": {
       "duration": 1000,

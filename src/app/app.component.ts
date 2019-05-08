@@ -4,9 +4,6 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { MainService } from './services/main-service';
-import { Store, select } from '@ngrx/store';
-import { IAppState } from './store/state/app.state';
-import { selectEstado } from './store/selectors/estado.selectors';
 
 @Component({
   selector: 'app-root',
@@ -28,14 +25,12 @@ export class AppComponent {
   ];
 
   params: any;
-  estado$ = this._store.select(state => state.estado );
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public mS: MainService,
-    private _store: Store<IAppState>
+    public mS: MainService
   ) {
 
     this.params = {

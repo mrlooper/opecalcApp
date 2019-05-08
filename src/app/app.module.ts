@@ -17,7 +17,6 @@ import { IonicStorageModule } from '@ionic/storage';
 import { DialogService } from './services/dialog-service';
 import { ValidationService } from './services/validation';
 import { StoreModule } from '@ngrx/store';
-import { appRerducers } from './store/reducers/app.reducers';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { AdMobFree } from '@ionic-native/admob-free/ngx';
@@ -41,8 +40,7 @@ Native Advanced Video [ca-app-pub-3940256099942544/1044960115]
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule,
-    StoreModule.forRoot(appRerducers)
+    AppRoutingModule
   ],
   providers: [
     InAppBrowser,
