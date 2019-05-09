@@ -1,0 +1,55 @@
+<bp-toolbar titulo="EDITAR PLANTILLA"></bp-toolbar>
+
+<ion-content>
+
+  <ion-grid *ngIf="plantilla">
+
+    <ion-row wrap padding>
+      <ion-col size="12">
+
+        <!--Form-->
+        <div>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>{{ plantilla.nombre }}</ion-label>
+          </ion-item>
+        </div>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <!---Register button-->
+        <button boton-mediano ion-button form-button float-right clear button-clear round outline
+          (click)="onGuardar()">Guardar</button>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item *ngFor="let p of plantilla.r_preguntas">
+            <ion-label>{{ p.pregunta }}</ion-label>
+            <ion-select id="{{ p.id }}" value="{{ p.respuesta }}" (ionChange)="onChangeRespuesta($event)" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="SIN RESPONDER">
+                <ion-select-option value="{{ r }}" *ngFor="let r of respuestas">{{ r }}</ion-select-option>
+                <ion-select-option value="">SIN RESPONDER</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <!---Register button-->
+        <button boton-mediano ion-button form-button float-right clear button-clear round outline
+          (click)="onGuardar()">Guardar</button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

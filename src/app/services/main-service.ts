@@ -126,6 +126,17 @@ export class MainService {
                 });
     }
 
+    api_actualizar_plantilla_usuario(id_plantilla, preguntas, cb = null, mostrar_dialogo = true) {
+        this.http_post_api('actualizar-plantilla-usuario', {
+            'cid': this.did,
+            'fcmtk': this.fcmService.token,
+            'id-plantilla': id_plantilla,
+            'preguntas': preguntas
+        }, function (data) {
+            cb && cb(data);
+        }, mostrar_dialogo);
+    }
+
     api_obtener_administraciones(cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-administraciones', {
             'cid': this.did,

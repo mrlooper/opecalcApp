@@ -24,6 +24,10 @@ export class VerPlantillaUsuarioPage implements OnInit {
 
   }
 
+  onEditar() {
+    this.navCtrl.navigateForward('editar-plantilla-usuario/' + this.id_plantilla);
+  }
+
   cargarPlantilla() {
 
     this.mS.api_obtener_plantilla_usuario(this.id_plantilla, (data) => {
@@ -40,6 +44,9 @@ export class VerPlantillaUsuarioPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewDidEnter(){
     this.cargarPlantilla();
   }
 

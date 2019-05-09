@@ -15,6 +15,7 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
+  { path: 'editar-plantilla-usuario/:id', loadChildren: './editar-plantilla-usuario/editar-plantilla-usuario.module#EditarPlantillaUsuarioPageModule' },
   { path: 'listado-administraciones/:action', loadChildren: './listado-administraciones/listado-administraciones.module#ListadoAdministracionesPageModule' },
   { path: 'listado-examenes/:action', loadChildren: './listado-examenes/listado-examenes.module#ListadoExamenesPageModule' },
   { path: 'listado-especialidades/:action', loadChildren: './listado-especialidades/listado-especialidades.module#ListadoEspecialidadesPageModule' },

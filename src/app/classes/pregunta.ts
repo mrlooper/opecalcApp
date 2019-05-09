@@ -6,6 +6,9 @@ export class Pregunta {
     public respuesta: string;
     public anulada: boolean;
 
+    /* Flag modificacion */
+    public modificada: boolean;
+
     constructor() {
     }
 

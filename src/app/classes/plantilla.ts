@@ -9,7 +9,7 @@ export class Plantilla {
     public nombre: string;
     public tipo: string;
     public fechayhora_alta: string;
-    public respuestas: string;
+    public respuestas: number;
     public anuladas: number;
     public nota: number;
     public corregida: boolean;
