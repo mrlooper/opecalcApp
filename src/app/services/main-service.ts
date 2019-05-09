@@ -196,6 +196,16 @@ export class MainService {
         }, mostrar_dialogo);
     }
 
+    api_obtener_plantilla_usuario(id_plantilla, cb = null, mostrar_dialogo = true) {
+        this.http_post_api('obtener-plantilla-usuario', {
+            'cid': this.did,
+            'fcmtk': this.fcmService.token,
+            'id-plantilla': id_plantilla
+        }, function (data) {
+            cb && cb(data);
+        }, mostrar_dialogo);
+    }
+
     api_obtener_plantillas_usuario(cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-plantillas-usuario', {
             'cid': this.did,

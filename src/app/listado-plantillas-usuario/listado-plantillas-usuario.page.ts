@@ -21,6 +21,10 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
     this.plantillas = [];
   }
 
+  onClickPlantilla(p){
+    this.navCtrl.navigateForward('ver-plantilla-usuario/' + p.id);
+  }
+
   onNuevaPlantilla() {
     this.navCtrl.navigateForward('listado-administraciones/nueva-plantilla');
   }

@@ -1,0 +1,40 @@
+<bp-toolbar titulo="PLANTILLA"></bp-toolbar>
+
+<ion-content>
+
+  <ion-grid *ngIf="plantilla">
+
+    <ion-row>
+      <ion-col size="12">
+        <!---Register button-->
+        <button boton-mediano ion-button form-button float-right clear button-clear round outline
+          (click)="onEditar()">Editar</button>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngFor="let p of plantilla.r_preguntas">
+
+      <ion-col size="1">
+      </ion-col>
+      <ion-col size="5">
+        <ion-label bold>{{ p.pregunta }} - </ion-label>
+      </ion-col>
+      <ion-col size="5">
+        <ion-label bold>{{ p.respuesta }}</ion-label>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <!---Register button-->
+        <button boton-mediano ion-button form-button float-right clear button-clear round outline
+          (click)="onEditar()">Editar</button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
