@@ -1,0 +1,59 @@
+<bp-toolbar titulo="AÑADIR PLANTILLA"></bp-toolbar>
+
+<!-- Themes Login + logo -->
+<ion-content white-background>
+  <ion-grid>
+    <ion-row wrap padding>
+      <ion-col size="12">
+
+        <!--Form-->
+        <div>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>{{ administracion }}</ion-label>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>{{ ope }}</ion-label>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>ACCESO {{ tipo_acceso }}</ion-label>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>{{ especialidad }}</ion-label>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>{{ examen }}</ion-label>
+          </ion-item>
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+
+        <div class="form">
+
+          <ion-item no-padding transparent>
+            <ion-label position="floating" color="formLabel">Nombre plantilla</ion-label>
+            <ion-input required type="text" [(ngModel)]="nombre_plantilla"></ion-input>
+          </ion-item>
+          
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <!---Register button-->
+        <button boton-mediano ion-button form-button float-right clear button-clear round outline
+          (click)="onConfirmar()">Añadir</button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,32 @@
+<bp-toolbar titulo="ADMINISTRACIONES"></bp-toolbar>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid no-padding>
+    <!--Content-->
+    <ion-row>
+
+      <ion-col size="12">
+
+        <ion-list no-margin>
+
+          <ion-item (click)="onClickAdministracion(a)" *ngFor="let a of administraciones">
+
+              <ion-label>
+                <p bold>{{ a.nombre }}</p>
+              </ion-label>
+
+          </ion-item>
+
+        </ion-list>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -3,6 +3,7 @@ import { Plantilla } from '../classes/plantilla';
 import { MainService } from '../services/main-service';
 import { DialogService } from '../services/dialog-service';
 import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-listado-plantillas-usuario',
@@ -15,12 +16,13 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
 
   constructor(public navCtrl: NavController,
     public mS: MainService,
-    public dialogCtrl: DialogService) {
+    public dialogCtrl: DialogService,
+    private aR: ActivatedRoute) {
     this.plantillas = [];
   }
 
-  onNuevaPlantilla(){
-    this.navCtrl.navCtrl('nueva-plantilla-usuario');
+  onNuevaPlantilla() {
+    this.navCtrl.navigateForward('listado-administraciones/nueva-plantilla');
   }
 
   cargarPlantillas() {
@@ -28,6 +30,9 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
       if (data.codigo == 0) {
         let i: number;
         let p: Plantilla;
+
+        /* Invertimos el orden para tener las mas recientes antes */
+        data.plantillas = data.plantillas.reverse();
 
         this.plantillas = [];
         for (i = 0; i < data.plantillas.length; i++) {
@@ -42,6 +47,9 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewDidEnter(){
     this.cargarPlantillas();
   }
 
