@@ -9,6 +9,7 @@ export class Plantilla {
     public nombre: string;
     public tipo: string;
     public fechayhora_alta: string;
+    public respuestas: string;
     public anuladas: number;
     public nota: number;
     public corregida: boolean;
@@ -27,6 +28,7 @@ export class Plantilla {
         this.nombre = json.nombre;
         this.tipo = json.tipo;
         this.fechayhora_alta = json.fechayhora_alta;
+        this.respuestas = json.respuestas;
         this.anuladas = json.anuladas;
         this.nota = json.nota;
         this.corregida = json.corregida;

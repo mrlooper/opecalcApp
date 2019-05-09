@@ -4,6 +4,20 @@
 
   <ion-grid *ngIf="plantilla">
 
+    <ion-row wrap padding>
+      <ion-col size="12">
+
+        <!--Form-->
+        <div>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>{{ plantilla.nombre }}</ion-label>
+          </ion-item>
+        </div>
+
+      </ion-col>
+    </ion-row>
+
     <ion-row>
       <ion-col size="12">
         <!---Register button-->
