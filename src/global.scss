@@ -96,3 +96,19 @@ ion-avatar {
   min-height: 60px;
 }
 
+.title-components{
+  color: theme-colors('mainColors', 'secondary-first');
+  font-size: 16px;
+  font-weight: normal;
+  clear: both;
+  display: block;
+  margin: 15px 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid theme-colors('mainColors', 'secondary-first');
+}
+
+.parrafo {
+  font-size: $text-font-size;
+  color: theme-colors('textColors', 'primary');
+  font-weight: 300;
+}

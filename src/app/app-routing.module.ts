@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'nueva-plantilla-usuario', loadChildren: './nueva-plantilla-usuario/nueva-plantilla-usuario.module#NuevaPlantillaUsuarioPageModule' },
   { path: 'ver-plantilla/:id', loadChildren: './ver-plantilla/ver-plantilla.module#VerPlantillaPageModule' },
   { path: 'ver-plantilla-usuario/:id', loadChildren: './ver-plantilla-usuario/ver-plantilla-usuario.module#VerPlantillaUsuarioPageModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
 ];
 
 @NgModule({
