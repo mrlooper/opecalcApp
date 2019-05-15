@@ -30,6 +30,7 @@ export class ListadoExamenesPage implements OnInit {
   onClickExamen(e) {
     switch (this.action) {
       case 'nueva-plantilla':
+
         this.param['examen'] = e;
 
         this.mS.pageArgs.push({
@@ -38,6 +39,17 @@ export class ListadoExamenesPage implements OnInit {
         this.navCtrl.navigateForward('nueva-plantilla-usuario');
 
         break;
+
+      case 'detalle-examen':
+        this.param['examen'] = e;
+
+        this.mS.pageArgs.push({
+          param: this.param
+        });
+        this.navCtrl.navigateForward('detalle-examen');
+
+        break;
+
       default:
         console.error('Action ' + this.action + ' incorrecta');
         break;

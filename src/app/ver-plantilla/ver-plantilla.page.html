@@ -1,0 +1,20 @@
+<bp-toolbar titulo="PLANTILLA"></bp-toolbar>
+
+<ion-content>
+
+  <ion-grid *ngIf="plantilla">
+
+    <ion-row *ngFor="let p of plantilla.r_preguntas">
+
+      <ion-col size="1">
+      </ion-col>
+      <ion-col size="11">
+        <ion-label bold>{{ p.pregunta }} - <span *ngIf="p.respuesta">{{ p.respuesta }}</span><span
+            *ngIf="!p.respuesta">SIN RESPONDER</span></ion-label>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

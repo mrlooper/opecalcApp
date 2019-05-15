@@ -30,6 +30,7 @@ export class ListadoTiposAccesoPage implements OnInit {
   onClickTipoAcceso(t) {
     switch (this.action) {
       case 'nueva-plantilla':
+      case 'detalle-examen':
         this.param['tipo_acceso'] = t;
 
         this.mS.pageArgs.push({

@@ -30,6 +30,7 @@ export class ListadoEspecialidadesPage implements OnInit {
   onClickEspecialidad(e) {
     switch (this.action) {
       case 'nueva-plantilla':
+      case 'detalle-examen':
         this.param['especialidad'] = e;
 
         this.mS.pageArgs.push({

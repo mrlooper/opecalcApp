@@ -16,6 +16,7 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },
   { path: 'calculadora-SAS1617ESTB', loadChildren: './calculadora-sas1617-estb/calculadora-sas1617-estb.module#CalculadoraSAS1617ESTBPageModule' },
+  { path: 'detalle-examen', loadChildren: './detalle-examen/detalle-examen.module#DetalleExamenPageModule' },
   { path: 'editar-plantilla-usuario/:id', loadChildren: './editar-plantilla-usuario/editar-plantilla-usuario.module#EditarPlantillaUsuarioPageModule' },
   { path: 'listado-administraciones/:action', loadChildren: './listado-administraciones/listado-administraciones.module#ListadoAdministracionesPageModule' },
   { path: 'listado-calculadoras', loadChildren: './listado-calculadoras/listado-calculadoras.module#ListadoCalculadorasPageModule' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'listado-plantillas-usuario', loadChildren: './listado-plantillas-usuario/listado-plantillas-usuario.module#ListadoPlantillasUsuarioPageModule' },
   { path: 'listado-tipos-acceso/:action', loadChildren: './listado-tipos-acceso/listado-tipos-acceso.module#ListadoTiposAccesoPageModule' },
   { path: 'nueva-plantilla-usuario', loadChildren: './nueva-plantilla-usuario/nueva-plantilla-usuario.module#NuevaPlantillaUsuarioPageModule' },
+  { path: 'ver-plantilla/:id', loadChildren: './ver-plantilla/ver-plantilla.module#VerPlantillaPageModule' },
   { path: 'ver-plantilla-usuario/:id', loadChildren: './ver-plantilla-usuario/ver-plantilla-usuario.module#VerPlantillaUsuarioPageModule' },
 ];
 

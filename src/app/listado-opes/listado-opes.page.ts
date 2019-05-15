@@ -32,6 +32,7 @@ export class ListadoOpesPage implements OnInit {
   onClickOpe(o) {
     switch (this.action) {
       case 'nueva-plantilla':
+      case 'detalle-examen':
         this.param['ope'] = o;
 
         this.mS.pageArgs.push({

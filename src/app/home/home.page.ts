@@ -25,6 +25,10 @@ export class HomePage {
     this.navCtrl.navigateForward('listado-plantillas-usuario');
   }
 
+  onClickOpes() {
+    this.navCtrl.navigateForward('/listado-administraciones/detalle-examen');
+  }
+
   onClick() {
     console.log('Mostrando Banner');
     this.admobFreeService.BannerAd();

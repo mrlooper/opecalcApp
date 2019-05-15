@@ -1,0 +1,89 @@
+<bp-toolbar titulo="DATOS EXAMEN"></bp-toolbar>
+
+<!-- Themes Login + logo -->
+<ion-content white-background>
+  <ion-grid>
+    <ion-row wrap padding>
+      <ion-col size="12">
+
+        <!--Form-->
+        <div>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>{{ examen.nombre }}</ion-label>
+          </ion-item>
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- CONVOCATORIA -->
+    <ion-row *ngIf="examen.convocatoria_url">
+
+      <ion-col size="12">
+
+        <button boton-full ion-button form-button clear button-clear round outline (click)="onClickConvocatoria()">
+          <ion-icon name="volume-low"></ion-icon>
+          CONVOCATORIA
+        </button>
+
+      </ion-col>
+
+    </ion-row>
+
+    <!-- PLANTILLA PROVISIONAL -->
+    <ion-row *ngIf="examen.plantilla_provisional_id">
+
+      <ion-col size="12">
+
+        <button boton-full ion-button form-button clear button-clear round outline (click)="onClickPlantillaProvisional()">
+          <ion-icon name="document"></ion-icon>
+          PLANTILLA PROVISIONAL
+        </button>
+
+      </ion-col>
+
+    </ion-row>
+    <ion-row *ngIf="examen.plantilla_provisional_url">
+
+      <ion-col size="12">
+
+        <button boton-full ion-button form-button clear button-clear round outline (click)="onClickPlantillaProvisionalURL()">
+          <ion-icon name="document"></ion-icon>
+          PLANTILLA PROVISIONAL (PDF)
+        </button>
+
+      </ion-col>
+
+    </ion-row>
+
+    <!-- PLANTILLA DEFINITIVA -->
+    <ion-row *ngIf="examen.plantilla_definitiva_id">
+
+        <ion-col size="12">
+  
+          <button boton-full ion-button form-button clear button-clear round outline (click)="onClickPlantillaDefinitiva()">
+            <ion-icon name="document"></ion-icon>
+            PLANTILLA DEFINITIVA
+          </button>
+  
+        </ion-col>
+  
+      </ion-row>
+      <ion-row *ngIf="examen.plantilla_definitiva_url">
+  
+        <ion-col size="12">
+  
+          <button boton-full ion-button form-button clear button-clear round outline (click)="onClickPlantillaDefinitivaURL()">
+            <ion-icon name="document"></ion-icon>
+            PLANTILLA DEFINITIVA (PDF)
+          </button>
+  
+        </ion-col>
+  
+      </ion-row>    
+
+
+
+  </ion-grid>
+</ion-content>
