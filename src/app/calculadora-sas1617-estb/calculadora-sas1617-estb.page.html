@@ -1,0 +1,89 @@
+<bp-toolbar titulo="SAS1617ESTB"></bp-toolbar>
+
+<!-- Themes Login + logo -->
+<ion-content white-background>
+  <ion-grid>
+
+
+    <ion-row>
+      <ion-col size="6">
+
+        <!-- TEORICO -->
+        <ion-list>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>TEÓRICO </ion-label>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label position="floating" color="formLabel">Anuladas</ion-label>
+            <ion-input required type="text" [(ngModel)]="anuladas_teorico"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label position="floating" color="formLabel">Aciertos</ion-label>
+            <ion-input required type="text" [(ngModel)]="aciertos_teorico"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label position="floating" color="formLabel">Errores</ion-label>
+            <ion-input required type="text" [(ngModel)]="errores_teorico"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+      <!-- PRACTICO -->
+      <ion-col size="6">
+        <ion-list>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>PRÁCTICO </ion-label>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label position="floating" color="formLabel">Anuladas</ion-label>
+            <ion-input required type="text" [(ngModel)]="anuladas_practico"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label position="floating" color="formLabel">Aciertos</ion-label>
+            <ion-input required type="text" [(ngModel)]="aciertos_practico"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label position="floating" color="formLabel">Errores</ion-label>
+            <ion-input required type="text" [(ngModel)]="errores_practico"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+    </ion-row>
+
+
+    <ion-row wrap padding>
+      <ion-col size="12">
+
+        <!--Form-->
+        <div>
+
+          <ion-item no-padding transparent>
+            <ion-label color="formLabel" bold>NOTA: <span>{{ nota }}</span> </ion-label>
+          </ion-item>
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col size="12">
+        <!---Register button-->
+        <button boton-mediano ion-button form-button float-right clear button-clear round outline
+          (click)="onCalcular()">Calcular</button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

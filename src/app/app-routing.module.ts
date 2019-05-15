@@ -15,8 +15,10 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
+  { path: 'calculadora-SAS1617ESTB', loadChildren: './calculadora-sas1617-estb/calculadora-sas1617-estb.module#CalculadoraSAS1617ESTBPageModule' },
   { path: 'editar-plantilla-usuario/:id', loadChildren: './editar-plantilla-usuario/editar-plantilla-usuario.module#EditarPlantillaUsuarioPageModule' },
   { path: 'listado-administraciones/:action', loadChildren: './listado-administraciones/listado-administraciones.module#ListadoAdministracionesPageModule' },
+  { path: 'listado-calculadoras', loadChildren: './listado-calculadoras/listado-calculadoras.module#ListadoCalculadorasPageModule' },
   { path: 'listado-examenes/:action', loadChildren: './listado-examenes/listado-examenes.module#ListadoExamenesPageModule' },
   { path: 'listado-especialidades/:action', loadChildren: './listado-especialidades/listado-especialidades.module#ListadoEspecialidadesPageModule' },
   { path: 'listado-opes/:action', loadChildren: './listado-opes/listado-opes.module#ListadoOpesPageModule' },

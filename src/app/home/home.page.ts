@@ -17,6 +17,10 @@ export class HomePage {
     private admobFreeService: AdmobFreeService) {
   }
 
+  onClickCalculadora() {
+    this.navCtrl.navigateForward('listado-calculadoras');
+  }
+
   onClickMisPlantillas() {
     this.navCtrl.navigateForward('listado-plantillas-usuario');
   }

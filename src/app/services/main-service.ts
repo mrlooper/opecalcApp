@@ -89,14 +89,14 @@ export class MainService {
             /* Generamos DID si no lo tenemos */
             if (!did) {
                 this.uniqueDeviceID.get()
-                .then((uuid: any) => {
-                    console.log('Device UUID: ' + uuid);
-                    this.did = uuid;
-                })
-                .catch((error: any) => {
-                    console.log(error);
-                    this.generar_DID();
-                });
+                    .then((uuid: any) => {
+                        console.log('Device UUID: ' + uuid);
+                        this.did = uuid;
+                    })
+                    .catch((error: any) => {
+                        console.log(error);
+                        this.generar_DID();
+                    });
             }
 
         });
@@ -159,13 +159,24 @@ export class MainService {
         }, mostrar_dialogo);
     }
 
+    api_obtener_calculadoras(cb = null, mostrar_dialogo = true) {
+        let args = {
+            'cid': this.did,
+            'fcmtk': this.fcmService.token
+        };
+
+        this.http_post_api('obtener-calculadoras', args, function (data) {
+            cb && cb(data);
+        }, mostrar_dialogo);
+    }
+
     api_obtener_examenes(id_especialidad = null, cb = null, mostrar_dialogo = true) {
         let args = {
             'cid': this.did,
             'fcmtk': this.fcmService.token
         };
 
-        if ( id_especialidad ) {
+        if (id_especialidad) {
             args['id-especialidad'] = id_especialidad;
         }
 
@@ -180,10 +191,10 @@ export class MainService {
             'fcmtk': this.fcmService.token
         };
 
-        if ( id_ope ) {
+        if (id_ope) {
             args['id-ope'] = id_ope;
         }
-        if ( tipo_acceso ) {
+        if (tipo_acceso) {
             args['tipo-acceso'] = tipo_acceso;
         }
 
@@ -198,7 +209,7 @@ export class MainService {
             'fcmtk': this.fcmService.token
         };
 
-        if ( id_administracion ) {
+        if (id_administracion) {
             args['id-administracion'] = id_administracion;
         }
 
@@ -235,4 +246,7 @@ export class MainService {
         }, mostrar_dialogo);
     }
 
+    isNormalInteger(str) {
+        return /^\+?(0|[1-9]\d*)$/.test(str);
+    }
 }
