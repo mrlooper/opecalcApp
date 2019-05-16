@@ -39,7 +39,7 @@ export class AppComponent {
 
     this.params = {
       background: 'assets/images/background/products.png',
-      image: 'assets/images/logo/login-bp.png',
+      image: 'assets/images/logo/icono-examen.png',
       title: 'OPECalc - Punto de encuentro OPE'
     };
 
