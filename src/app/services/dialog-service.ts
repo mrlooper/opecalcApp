@@ -14,7 +14,24 @@ export class DialogService {
     constructor(private alertCtrl: AlertController,
         public toastCtrl: ToastController,
         public loadingCtrl: LoadingController
-        ) { }
+    ) { }
+
+    async presentAlert(titulo, texto, cb_aceptar = null) {
+        let alert = await this.alertCtrl.create({
+            header: titulo,
+            message: texto,
+            buttons: [
+                {
+                    text: 'Aceptar',
+                    handler: () => {
+                        cb_aceptar && cb_aceptar();
+                    }
+                }
+            ]
+        });
+
+        return await alert.present();
+    }
 
     async presentConfirm(titulo, texto, cb_aceptar = null, cb_cancelar = null) {
         let alert = await this.alertCtrl.create({
@@ -55,14 +72,14 @@ export class DialogService {
         console.log('Presenting...');
         return await this.loadingCtrl.create({
             message: mensaje,
-          duration: 5000,
+            duration: 5000,
         }).then(a => {
-          a.present().then(() => {
-            console.log('presented');
-            if (!this.isLoading) {
-              a.dismiss().then(() => console.log('abort presenting'));
-            }
-          });
+            a.present().then(() => {
+                console.log('presented');
+                if (!this.isLoading) {
+                    a.dismiss().then(() => console.log('abort presenting'));
+                }
+            });
         });
     }
 

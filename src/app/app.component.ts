@@ -50,10 +50,12 @@ export class AppComponent {
     this.fcm.getToken();
     this.fcm.onNotifications().subscribe(
       (msg) => {
+        console.log('Notificacion Firebase:');
+        console.log(msg);
         if (this.platform.is('ios')) {
-          this.dialogCtrl.presentToast(msg.aps.alert);
+          this.dialogCtrl.presentAlert('', msg.aps.alert);
         } else {
-          this.dialogCtrl.presentToast(msg.body);
+          this.dialogCtrl.presentAlert(msg.title, msg.message);
         }
       });
   }
