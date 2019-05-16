@@ -69,6 +69,7 @@ export class ListadoOpesPage implements OnInit {
 
   ngOnInit() {
     this.cargarOpes();
+    this.mS.showAds();
   }
 
 }

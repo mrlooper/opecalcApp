@@ -68,6 +68,7 @@ export class ListadoEspecialidadesPage implements OnInit {
 
   ngOnInit() {
     this.cargarEspecialidades();
+    this.mS.showAds();
   }
 
 

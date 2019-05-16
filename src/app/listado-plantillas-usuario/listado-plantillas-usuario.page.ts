@@ -55,6 +55,7 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
 
   ionViewDidEnter(){
     this.cargarPlantillas();
+    this.mS.showAds();
   }
 
 }

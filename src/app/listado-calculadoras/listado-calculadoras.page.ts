@@ -57,6 +57,7 @@ export class ListadoCalculadorasPage implements OnInit {
 
   ngOnInit() {
     this.cargarCalculadoras();
+    this.mS.showAds();
   }
 
 }

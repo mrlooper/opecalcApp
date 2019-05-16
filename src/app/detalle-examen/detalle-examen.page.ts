@@ -51,6 +51,7 @@ export class DetalleExamenPage implements OnInit {
   }
 
   ngOnInit() {
+    this.mS.showAds();
   }
 
 }

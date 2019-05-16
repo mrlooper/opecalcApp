@@ -61,6 +61,7 @@ export class CalculadoraSAS1617ESTBPage implements OnInit {
   }
 
   ngOnInit() {
+    this.mS.showAds();
   }
 
 }

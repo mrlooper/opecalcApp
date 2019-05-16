@@ -53,6 +53,7 @@ export class NuevaPlantillaUsuarioPage implements OnInit {
   }
 
   ngOnInit() {
+    this.mS.showAds();
   }
 
 }

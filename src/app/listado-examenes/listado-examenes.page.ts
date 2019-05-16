@@ -78,6 +78,7 @@ export class ListadoExamenesPage implements OnInit {
 
   ngOnInit() {
     this.cargarExamenes();
+    this.mS.showAds();
   }
 
 

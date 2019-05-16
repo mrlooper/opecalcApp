@@ -97,5 +97,6 @@ export class EditarPlantillaUsuarioPage implements OnInit {
 
   ngOnInit() {
     this.cargarPlantilla();
+    this.mS.showAds();
   }
 }

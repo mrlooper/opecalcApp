@@ -15,6 +15,7 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
   { path: 'calculadora-SAS1617ESTB', loadChildren: './calculadora-sas1617-estb/calculadora-sas1617-estb.module#CalculadoraSAS1617ESTBPageModule' },
   { path: 'detalle-examen', loadChildren: './detalle-examen/detalle-examen.module#DetalleExamenPageModule' },
   { path: 'editar-plantilla-usuario/:id', loadChildren: './editar-plantilla-usuario/editar-plantilla-usuario.module#EditarPlantillaUsuarioPageModule' },
@@ -28,7 +29,6 @@ const routes: Routes = [
   { path: 'nueva-plantilla-usuario', loadChildren: './nueva-plantilla-usuario/nueva-plantilla-usuario.module#NuevaPlantillaUsuarioPageModule' },
   { path: 'ver-plantilla/:id', loadChildren: './ver-plantilla/ver-plantilla.module#VerPlantillaPageModule' },
   { path: 'ver-plantilla-usuario/:id', loadChildren: './ver-plantilla-usuario/ver-plantilla-usuario.module#VerPlantillaUsuarioPageModule' },
-  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
 ];
 
 @NgModule({

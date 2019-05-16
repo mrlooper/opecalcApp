@@ -54,6 +54,7 @@ export class ListadoAdministracionesPage implements OnInit {
 
   ngOnInit() {
     this.cargarAdministraciones();
+    this.mS.showAds();
   }
 
 }

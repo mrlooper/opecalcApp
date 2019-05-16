@@ -65,6 +65,7 @@ export class ListadoTiposAccesoPage implements OnInit {
 
   ngOnInit() {
     this.cargarTiposAcceso();
+    this.mS.showAds();
   }
 
 

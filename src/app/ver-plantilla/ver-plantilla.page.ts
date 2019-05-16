@@ -44,6 +44,7 @@ export class VerPlantillaPage implements OnInit {
 
   ionViewDidEnter(){
     this.cargarPlantilla();
+    this.mS.showAds();
   }
 
 }

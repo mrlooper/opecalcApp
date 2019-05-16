@@ -8,6 +8,8 @@ import { AppSettings } from './app-settings';
 import { DialogService } from './dialog-service';
 import { FcmService } from './fcm.service';
 import { PageArgs } from '../classes/page-args';
+import { AdmobFreeService } from '../services/admobfree.service';
+
 
 
 /*
@@ -24,6 +26,7 @@ export class MainService {
     public datos_usuario = null;
     public argsQueue: Array<any>;
     public pageArgs: PageArgs;
+    public ts_intersitial_ad: number;
 
     @Output() eventos: EventEmitter<BPEvent> = new EventEmitter();
 
@@ -32,10 +35,12 @@ export class MainService {
         private http: HttpClient,
         public loadingCtrl: LoadingController,
         public dlgService: DialogService,
-        public fcmService: FcmService
+        public fcmService: FcmService,
+        private admobFreeService: AdmobFreeService
     ) {
 
         console.log('Inicializando servicio MainService');
+        this.ts_intersitial_ad = 0;
         this.argsQueue = [];
         this.pageArgs = new PageArgs();
 
@@ -258,5 +263,37 @@ export class MainService {
 
     isNormalInteger(str) {
         return /^\+?(0|[1-9]\d*)$/.test(str);
+    }
+
+    showBanner() {
+        console.log('Mostrando Banner');
+        this.admobFreeService.BannerAd();
+    }
+
+    showInterstitial() {
+        console.log('Mostrando Intersitial');
+        this.admobFreeService.InterstitialAd();
+    }
+
+    showAds() {
+
+        if (AppSettings.SHOW_ADS) {
+            let diff: number;
+            let ts_now: number;
+
+            ts_now = Math.floor(Date.now() / 1000);
+            diff = ts_now - this.ts_intersitial_ad;
+
+            if (diff > AppSettings.TIME_BETWEEN_INTERSITIALAD) {
+                this.showInterstitial();
+                this.ts_intersitial_ad = ts_now;
+            } else {
+                console.log('Tiempo desde el ultimo intersitial ad insuficiente: ' + diff + 's');
+                this.showBanner();
+            }
+        } else{
+            console.warn('Anuncios desactivados');
+        }
+
     }
 }
