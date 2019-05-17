@@ -155,6 +155,7 @@ export class MainService {
 
     api_obtener_administraciones(cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-administraciones', {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token
         }, function (data) {
@@ -164,6 +165,7 @@ export class MainService {
 
     api_alta_plantilla_usuario(id_examen, nombre, cb = null, mostrar_dialogo = true) {
         let args = {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token,
             'id-examen': id_examen,
@@ -177,6 +179,7 @@ export class MainService {
 
     api_obtener_calculadoras(cb = null, mostrar_dialogo = true) {
         let args = {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token
         };
@@ -188,6 +191,7 @@ export class MainService {
 
     api_obtener_examenes(id_especialidad = null, cb = null, mostrar_dialogo = true) {
         let args = {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token
         };
@@ -203,6 +207,7 @@ export class MainService {
 
     api_obtener_especialidades(id_ope = null, tipo_acceso = null, cb = null, mostrar_dialogo = true) {
         let args = {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token
         };
@@ -221,6 +226,7 @@ export class MainService {
 
     api_obtener_opes(id_administracion = null, cb = null, mostrar_dialogo = true) {
         let args = {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token
         };
@@ -236,6 +242,7 @@ export class MainService {
 
     api_obtener_plantilla(id_plantilla, cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-plantilla', {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token,
             'id-plantilla': id_plantilla
@@ -246,6 +253,7 @@ export class MainService {
 
     api_obtener_plantilla_usuario(id_plantilla, cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-plantilla-usuario', {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token,
             'id-plantilla': id_plantilla
@@ -256,6 +264,7 @@ export class MainService {
 
     api_obtener_plantillas_usuario(cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-plantillas-usuario', {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token
         }, function (data) {
@@ -265,6 +274,7 @@ export class MainService {
 
     api_obtener_tipos_acceso(cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-tipos-acceso', {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token
         }, function (data) {
