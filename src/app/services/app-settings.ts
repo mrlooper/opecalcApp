@@ -3,7 +3,7 @@ export const AppSettings = Object.freeze({
     'SHOW_START_WIZARD': false,
     'SHOW_ADS': true,
     'ADMOB_TESTING': false,
-    'TIME_BETWEEN_INTERSITIALAD': 1,
+    'TIME_BETWEEN_INTERSITIALAD': 10,
     'ADMOB_BANNER_ID': 'ca-app-pub-3940256099942544/6300978111',
     'ADMOB_INTERSITIAL_ID': 'ca-app-pub-3940256099942544/1033173712',
     'SUBSCRIBE': false,

@@ -89,5 +89,6 @@
         <variable name="ADMOB_APP_ID" value="ca-app-pub-5095935372980249~5695474497" />
     </plugin>
     <plugin name="cordova-plugin-firebase" spec="https://github.com/dpa99c/cordova-plugin-firebase#GH-1057-April-05-android-build-issue" />
+    <plugin name="cordova-plugin-app-version" spec="0.1.9" />
     <engine name="android" spec="7.1.4" />
 </widget>

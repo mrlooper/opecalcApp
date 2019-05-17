@@ -25,6 +25,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { Firebase } from '@ionic-native/firebase/ngx';
 import { FcmService } from './services/fcm.service';
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 const config = {
   apiKey: 'AIzaSyC4a0iRyN9SW8wcwGVmU_575KxIL6Og6OA',
@@ -70,6 +71,7 @@ Native Advanced Video [ca-app-pub-3940256099942544/1044960115]
     ValidationService,
     Firebase,
     FcmService,
+    AppVersion,
   ],
   bootstrap: [AppComponent]
 })

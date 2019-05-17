@@ -9,6 +9,7 @@ import { DialogService } from './dialog-service';
 import { FcmService } from './fcm.service';
 import { PageArgs } from '../classes/page-args';
 import { AdmobFreeService } from '../services/admobfree.service';
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 
 
@@ -27,6 +28,7 @@ export class MainService {
     public argsQueue: Array<any>;
     public pageArgs: PageArgs;
     public ts_intersitial_ad: number;
+    public version: string;
 
     @Output() eventos: EventEmitter<BPEvent> = new EventEmitter();
 
@@ -36,7 +38,8 @@ export class MainService {
         public loadingCtrl: LoadingController,
         public dlgService: DialogService,
         public fcmService: FcmService,
-        private admobFreeService: AdmobFreeService
+        private admobFreeService: AdmobFreeService,
+        private appVersion: AppVersion
     ) {
 
         console.log('Inicializando servicio MainService');
@@ -46,6 +49,13 @@ export class MainService {
 
         /* Cargamos datos almacenados */
         this.cargar_datos();
+
+        /* Version */
+        this.version = '-';
+        this.appVersion.getVersionNumber().then(version => {
+            this.version = version;
+            console.log('APP-VERSION-NUMBER: ' + version);
+        });
 
     }
 
@@ -133,6 +143,7 @@ export class MainService {
 
     api_actualizar_plantilla_usuario(id_plantilla, preguntas, cb = null, mostrar_dialogo = true) {
         this.http_post_api('actualizar-plantilla-usuario', {
+            'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token,
             'id-plantilla': id_plantilla,
