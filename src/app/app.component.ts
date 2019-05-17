@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { MainService } from './services/main-service';
 import { FcmService } from './services/fcm.service';
 import { DialogService } from './services/dialog-service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +35,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     public mS: MainService,
     private fcm: FcmService,
-    public dialogCtrl: DialogService
+    public dialogCtrl: DialogService,
+    public menuCtrl: MenuController
   ) {
 
     this.params = {
@@ -58,6 +60,10 @@ export class AppComponent {
           this.dialogCtrl.presentAlert(msg.title, msg.message);
         }
       });
+  }
+
+  onGoto() {
+    this.menuCtrl.toggle();
   }
 
   initializeApp() {

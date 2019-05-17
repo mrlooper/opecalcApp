@@ -12,25 +12,25 @@
         <ion-list no-margin no-padding lines="none">
 
           <!-- MIS PLANTILLAS -->
-          <ion-item routerLink="/listado-plantillas-usuario" routerDirection="forward">
+          <ion-item routerLink="/listado-plantillas-usuario" routerDirection="forward" (click)="onGoto()">
             <ion-icon name="today" icon-menu-small></ion-icon>
             <ion-label>Mis Plantillas</ion-label>
           </ion-item>
 
           <!-- OPEs -->
-          <ion-item routerLink="/listado-administraciones/detalle-examen" routerDirection="forward">
+          <ion-item routerLink="/listado-administraciones/detalle-examen" routerDirection="forward" (click)="onGoto()">
             <ion-icon name="filing" icon-menu-small></ion-icon>
             <ion-label>OPEs</ion-label>
           </ion-item>
 
           <!-- CALCULADORA -->
-          <ion-item routerLink="/listado-calculadoras" routerDirection="forward">
+          <ion-item routerLink="/listado-calculadoras" routerDirection="forward" (click)="onGoto()">
             <ion-icon name="calculator" icon-menu-small></ion-icon>
             <ion-label>Calculadora</ion-label>
           </ion-item>
 
           <!-- ACERCA DE -->
-          <ion-item routerLink="/about" routerDirection="forward">
+          <ion-item routerLink="/about" routerDirection="forward" (click)="onGoto()">
             <ion-icon name="information-circle-outline" icon-menu-small></ion-icon>
             <ion-label>Acerca de</ion-label>
           </ion-item>          
