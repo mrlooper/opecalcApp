@@ -16,6 +16,16 @@
       </ion-col>
       <!-- FIN: PLANTILLAS -->
 
+      <!-- MENSAJES -->
+      <ion-col size="4">
+        <button boton-menu (click)="onClickMensajes()">
+          <ion-icon name="mail" *ngIf="mS.num_mensajes_pendientes == 0"></ion-icon>
+          <ion-icon name="mail-unread" *ngIf="mS.num_mensajes_pendientes > 0"></ion-icon>
+          <span texto-boton>Mensajes <span *ngIf="mS.num_mensajes_pendientes > 0">( {{ mS.num_mensajes_pendientes }} ) </span></span>
+        </button>
+      </ion-col>
+      <!-- FIN: MENSAJES -->
+
       <!-- OPEs -->
       <ion-col size="4">
         <button boton-menu (click)="onClickOpes()">

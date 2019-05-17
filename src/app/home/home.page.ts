@@ -21,6 +21,10 @@ export class HomePage {
     this.navCtrl.navigateForward('listado-calculadoras');
   }
 
+  onClickMensajes() {
+    this.navCtrl.navigateForward('listado-mensajes');
+  }
+
   onClickMisPlantillas() {
     this.navCtrl.navigateForward('listado-plantillas-usuario');
   }

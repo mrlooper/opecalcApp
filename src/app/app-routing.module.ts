@@ -23,12 +23,14 @@ const routes: Routes = [
   { path: 'listado-calculadoras', loadChildren: './listado-calculadoras/listado-calculadoras.module#ListadoCalculadorasPageModule' },
   { path: 'listado-examenes/:action', loadChildren: './listado-examenes/listado-examenes.module#ListadoExamenesPageModule' },
   { path: 'listado-especialidades/:action', loadChildren: './listado-especialidades/listado-especialidades.module#ListadoEspecialidadesPageModule' },
+  { path: 'listado-mensajes', loadChildren: './listado-mensajes/listado-mensajes.module#ListadoMensajesPageModule' },
   { path: 'listado-opes/:action', loadChildren: './listado-opes/listado-opes.module#ListadoOpesPageModule' },
   { path: 'listado-plantillas-usuario', loadChildren: './listado-plantillas-usuario/listado-plantillas-usuario.module#ListadoPlantillasUsuarioPageModule' },
   { path: 'listado-tipos-acceso/:action', loadChildren: './listado-tipos-acceso/listado-tipos-acceso.module#ListadoTiposAccesoPageModule' },
   { path: 'nueva-plantilla-usuario', loadChildren: './nueva-plantilla-usuario/nueva-plantilla-usuario.module#NuevaPlantillaUsuarioPageModule' },
   { path: 'ver-plantilla/:id', loadChildren: './ver-plantilla/ver-plantilla.module#VerPlantillaPageModule' },
   { path: 'ver-plantilla-usuario/:id', loadChildren: './ver-plantilla-usuario/ver-plantilla-usuario.module#VerPlantillaUsuarioPageModule' },
+  { path: 'ver-mensaje', loadChildren: './ver-mensaje/ver-mensaje.module#VerMensajePageModule' },
 ];
 
 @NgModule({

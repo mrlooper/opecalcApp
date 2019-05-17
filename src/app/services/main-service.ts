@@ -10,6 +10,7 @@ import { FcmService } from './fcm.service';
 import { PageArgs } from '../classes/page-args';
 import { AdmobFreeService } from '../services/admobfree.service';
 import { AppVersion } from '@ionic-native/app-version/ngx';
+import { Mensaje } from '../classes/mensaje';
 
 
 
@@ -29,6 +30,8 @@ export class MainService {
     public pageArgs: PageArgs;
     public ts_intersitial_ad: number;
     public version: string;
+    public mensajes: Array<Mensaje>;
+    public num_mensajes_pendientes;
 
     @Output() eventos: EventEmitter<BPEvent> = new EventEmitter();
 
@@ -46,6 +49,8 @@ export class MainService {
         this.ts_intersitial_ad = 0;
         this.argsQueue = [];
         this.pageArgs = new PageArgs();
+        this.mensajes = [];
+        this.num_mensajes_pendientes = 0;
 
         /* Cargamos datos almacenados */
         this.cargar_datos();
@@ -107,16 +112,45 @@ export class MainService {
                     .then((uuid: any) => {
                         console.log('Device UUID: ' + uuid);
                         this.did = uuid;
+                        this.didListo();
                     })
                     .catch((error: any) => {
                         console.log(error);
                         this.generar_DID();
+                        this.didListo();
                     });
+            } else {
+                this.didListo();
             }
 
         });
 
         return;
+    }
+
+    cargar_mensajes(cb = null) {
+        this.api_obtener_mensajes((data) => {
+            if (data.codigo == 0) {
+                let i: number;
+                let m: Mensaje;
+
+                this.mensajes = [];
+                this.num_mensajes_pendientes = 0;
+                for (i = 0; i < data.mensajes.length; i++) {
+                    m = new Mensaje();
+                    m.cargarJson(data.mensajes[i]);
+                    this.mensajes.push(m);
+
+                    if (m.pendiente) {
+                        this.num_mensajes_pendientes++;
+                    }
+                }
+
+                cb && cb(this.mensajes);
+            } else {
+                console.error('Error cargando mensajes: ' + data.desc);
+            }
+        });
     }
 
     cargar_perfil_cliente(cb = null) {
@@ -177,6 +211,19 @@ export class MainService {
         }, mostrar_dialogo);
     }
 
+    api_leer_mensaje(id_mensaje, cb = null, mostrar_dialogo = true) {
+        let args = {
+            'version': this.version,
+            'cid': this.did,
+            'fcmtk': this.fcmService.token,
+            'id-mensaje': id_mensaje
+        };
+
+        this.http_post_api('leer-mensaje', args, function (data) {
+            cb && cb(data);
+        }, mostrar_dialogo);
+    }
+
     api_obtener_calculadoras(cb = null, mostrar_dialogo = true) {
         let args = {
             'version': this.version,
@@ -220,6 +267,18 @@ export class MainService {
         }
 
         this.http_post_api('obtener-especialidades', args, function (data) {
+            cb && cb(data);
+        }, mostrar_dialogo);
+    }
+
+    api_obtener_mensajes(cb = null, mostrar_dialogo = true) {
+        let args = {
+            'version': this.version,
+            'cid': this.did,
+            'fcmtk': this.fcmService.token
+        };
+
+        this.http_post_api('obtener-mensajes', args, function (data) {
             cb && cb(data);
         }, mostrar_dialogo);
     }
@@ -312,9 +371,14 @@ export class MainService {
                 console.log('Tiempo desde el ultimo intersitial ad insuficiente: ' + diff + 's');
                 this.showBanner();
             }
-        } else{
+        } else {
             console.warn('Anuncios desactivados');
         }
 
+    }
+
+    private didListo() {
+        console.log('DID LISTO!');
+        this.cargar_mensajes();
     }
 }
