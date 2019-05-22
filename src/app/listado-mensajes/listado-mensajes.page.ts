@@ -33,8 +33,11 @@ export class ListadoMensajesPage implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ionViewDidEnter() {
     this.cargarMensajes();
+  }
+
+  ngOnInit() {
     this.mS.showAds();
   }
 

@@ -13,6 +13,7 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Mensaje } from '../classes/mensaje';
 import { Market } from '@ionic-native/market/ngx';
 import { Platform } from 'ionic-angular';
+import { NavController } from '@ionic/angular';
 
 
 
@@ -34,6 +35,8 @@ export class MainService {
     public version: string;
     public mensajes: Array<Mensaje>;
     public num_mensajes_pendientes;
+    private aviso_nuevos_mensajes: boolean;
+
 
     @Output() eventos: EventEmitter<BPEvent> = new EventEmitter();
 
@@ -47,6 +50,7 @@ export class MainService {
         private appVersion: AppVersion,
         private market: Market,
         private platform: Platform,
+        private navCtrl: NavController,
     ) {
 
         console.log('Inicializando servicio MainService');
@@ -55,6 +59,7 @@ export class MainService {
         this.pageArgs = new PageArgs();
         this.mensajes = [];
         this.num_mensajes_pendientes = 0;
+        this.aviso_nuevos_mensajes = false;
 
         /* Cargamos datos almacenados */
         this.cargar_datos();
@@ -170,6 +175,20 @@ export class MainService {
             }
         });
     }
+
+    actualizarNumMensajesPendientes() {
+        let m: Mensaje;
+
+        this.num_mensajes_pendientes = 0;
+        for (let i = 0; i < this.mensajes.length; i++) {
+            m = this.mensajes[i];
+            if(m.pendiente){
+                this.num_mensajes_pendientes++;
+            }
+
+        }
+    }
+
 
     cargar_perfil_cliente(cb = null) {
     }
@@ -403,6 +422,19 @@ export class MainService {
             console.warn('Anuncios desactivados');
         }
 
+    }
+
+    mostrarAvisoNuevosMensajes() {
+        if (!this.aviso_nuevos_mensajes && this.num_mensajes_pendientes > 0) {
+            let mensaje = 'Tiene ' + this.num_mensajes_pendientes + ' pendientes. ¿Desea verlos?';
+            this.dlgService.presentConfirm('Nuevos mensajes', mensaje, () => {
+                this.aviso_nuevos_mensajes = true;
+                this.navCtrl.navigateForward('listado-mensajes');
+            },
+            () => {
+                this.aviso_nuevos_mensajes = true;
+            });
+        }
     }
 
     private didListo() {

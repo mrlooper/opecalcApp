@@ -11,10 +11,14 @@ import { NavController } from '@ionic/angular';
 })
 export class InicioPage implements OnInit {
 
+
   constructor(public navCtrl: NavController,
     public mS: MainService,
     public dialogCtrl: DialogService,
-    private admobFreeService: AdmobFreeService) { }
+    private admobFreeService: AdmobFreeService) {
+
+
+  }
 
   onClickCalculadora() {
     this.navCtrl.navigateForward('listado-calculadoras');
@@ -39,6 +43,11 @@ export class InicioPage implements OnInit {
 
   showInterstitial() {
     this.admobFreeService.InterstitialAd();
+  }
+
+  ionViewDidEnter() {
+    this.mS.actualizarNumMensajesPendientes();
+    this.mS.mostrarAvisoNuevosMensajes();
   }
 
   ngOnInit() {
