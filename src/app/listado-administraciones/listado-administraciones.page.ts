@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListadoAdministracionesPage implements OnInit {
 
-  private administraciones: Array<Administracion>;
+  public administraciones: Array<Administracion>;
   private action: string;
 
   constructor(public navCtrl: NavController,

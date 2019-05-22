@@ -12,7 +12,7 @@ import { Examen } from '../classes/examen';
 })
 export class ListadoExamenesPage implements OnInit {
 
-  private examenes: Array<Examen>;
+  public examenes: Array<Examen>;
   private action: string;
   private param;
 

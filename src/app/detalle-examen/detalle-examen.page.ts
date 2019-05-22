@@ -13,7 +13,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 export class DetalleExamenPage implements OnInit {
 
   private param;
-  private examen: Examen;
+  public examen: Examen;
 
   constructor(public navCtrl: NavController,
     public mS: MainService,

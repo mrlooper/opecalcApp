@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MainService } from '../services/main-service';
 import { DialogService } from '../services/dialog-service';
 import { AdmobFreeService } from '../services/admobfree.service';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-inicio',
+  templateUrl: './inicio.page.html',
+  styleUrls: ['./inicio.page.scss'],
 })
-export class HomePage {
+export class InicioPage implements OnInit {
 
   constructor(public navCtrl: NavController,
     public mS: MainService,
     public dialogCtrl: DialogService,
-    private admobFreeService: AdmobFreeService) {
-  }
+    private admobFreeService: AdmobFreeService) { }
 
   onClickCalculadora() {
     this.navCtrl.navigateForward('listado-calculadoras');
@@ -38,7 +37,11 @@ export class HomePage {
     this.admobFreeService.BannerAd();
   }
 
-  showInterstitial(){
+  showInterstitial() {
     this.admobFreeService.InterstitialAd();
   }
+
+  ngOnInit() {
+  }
+
 }

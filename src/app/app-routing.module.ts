@@ -8,13 +8,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
-  {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
+  { path: 'home', loadChildren: './inicio/inicio.module#InicioPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
   { path: 'calculadora-SAS1617ESTB', loadChildren: './calculadora-sas1617-estb/calculadora-sas1617-estb.module#CalculadoraSAS1617ESTBPageModule' },
   { path: 'detalle-examen', loadChildren: './detalle-examen/detalle-examen.module#DetalleExamenPageModule' },

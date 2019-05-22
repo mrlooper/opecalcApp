@@ -11,12 +11,12 @@ import { NavController } from '@ionic/angular';
 export class NuevaPlantillaUsuarioPage implements OnInit {
 
   private param;
-  private administracion: string;
-  private ope: string;
-  private tipo_acceso: string;
-  private especialidad: string;
-  private examen: string;
-  private nombre_plantilla;
+  public administracion: string;
+  public ope: string;
+  public tipo_acceso: string;
+  public especialidad: string;
+  public examen: string;
+  public nombre_plantilla;
 
   constructor(public navCtrl: NavController,
     public mS: MainService,

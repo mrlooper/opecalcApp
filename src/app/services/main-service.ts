@@ -59,7 +59,11 @@ export class MainService {
         this.version = '-';
         this.appVersion.getVersionNumber().then(version => {
             this.version = version;
-            console.log('APP-VERSION-NUMBER: ' + version);
+            console.log('APP-VERSION-NUMBER-LOCAL: ' + version);
+
+            this.api_obtener_version_apk((data) => {
+                console.log('APP-VERSION-NUMBER-REMOTA: ' + version);
+            });
         });
 
     }
@@ -333,6 +337,16 @@ export class MainService {
 
     api_obtener_tipos_acceso(cb = null, mostrar_dialogo = true) {
         this.http_post_api('obtener-tipos-acceso', {
+            'version': this.version,
+            'cid': this.did,
+            'fcmtk': this.fcmService.token
+        }, function (data) {
+            cb && cb(data);
+        }, mostrar_dialogo);
+    }
+
+    api_obtener_version_apk(cb = null, mostrar_dialogo = true) {
+        this.http_post_api('obtener-version-apk', {
             'version': this.version,
             'cid': this.did,
             'fcmtk': this.fcmService.token

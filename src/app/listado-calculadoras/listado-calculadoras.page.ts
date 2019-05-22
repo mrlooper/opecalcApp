@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListadoCalculadorasPage implements OnInit {
 
-  private calculadoras: Array<Calculadora>;
+  public calculadoras: Array<Calculadora>;
 
   constructor(public navCtrl: NavController,
     public mS: MainService,

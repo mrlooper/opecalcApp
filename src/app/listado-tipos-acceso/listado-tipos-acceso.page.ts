@@ -12,7 +12,7 @@ import { TipoAcceso } from '../classes/tipo-acceso';
 })
 export class ListadoTiposAccesoPage implements OnInit {
 
-  private tipos_acceso: Array<TipoAcceso>;
+  public tipos_acceso: Array<TipoAcceso>;
   private action: string;
   private param;
 

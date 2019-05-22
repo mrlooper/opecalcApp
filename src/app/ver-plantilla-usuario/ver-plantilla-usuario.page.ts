@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VerPlantillaUsuarioPage implements OnInit {
 
-  private plantilla: Plantilla;
+  public plantilla: Plantilla;
   private id_plantilla: string;
 
   constructor(public navCtrl: NavController,

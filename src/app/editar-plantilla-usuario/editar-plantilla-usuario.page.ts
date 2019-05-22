@@ -13,7 +13,7 @@ import { Pregunta } from '../classes/pregunta';
 })
 export class EditarPlantillaUsuarioPage implements OnInit {
 
-  private plantilla: Plantilla;
+  public plantilla: Plantilla;
   private id_plantilla: string;
   private respuestas: Array<any>;
   private opciones: string;

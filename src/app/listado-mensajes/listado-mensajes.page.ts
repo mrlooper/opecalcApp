@@ -12,7 +12,7 @@ import { Mensaje } from '../classes/mensaje';
 export class ListadoMensajesPage implements OnInit {
 
 
-  private mensajes: Array<Mensaje>;
+  public mensajes: Array<Mensaje>;
   
   constructor(public navCtrl: NavController,
     public mS: MainService,

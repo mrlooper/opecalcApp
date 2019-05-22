@@ -11,7 +11,7 @@ import { NavController } from '@ionic/angular';
 })
 export class VerMensajePage implements OnInit {
 
-  private mensaje: Mensaje;
+  public mensaje: Mensaje;
 
   constructor(public navCtrl: NavController,
     public mS: MainService,

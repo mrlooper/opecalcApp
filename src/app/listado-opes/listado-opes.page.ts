@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListadoOpesPage implements OnInit {
 
-  private opes: Array<Ope>;
+  public opes: Array<Ope>;
   private action: string;
   private param;
 

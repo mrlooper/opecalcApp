@@ -12,7 +12,7 @@ import { Especialidad } from '../classes/especialidad';
 })
 export class ListadoEspecialidadesPage implements OnInit {
 
-  private especialidades: Array<Especialidad>;
+  public especialidades: Array<Especialidad>;
   private action: string;
   private param;
 
