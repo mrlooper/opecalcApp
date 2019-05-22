@@ -11,6 +11,7 @@ import { PageArgs } from '../classes/page-args';
 import { AdmobFreeService } from '../services/admobfree.service';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Mensaje } from '../classes/mensaje';
+import { Market } from '@ionic-native/market/ngx';
 
 
 
@@ -42,7 +43,8 @@ export class MainService {
         public dlgService: DialogService,
         public fcmService: FcmService,
         private admobFreeService: AdmobFreeService,
-        private appVersion: AppVersion
+        private appVersion: AppVersion,
+        private market: Market
     ) {
 
         console.log('Inicializando servicio MainService');
@@ -69,7 +71,7 @@ export class MainService {
 
                 if(comp < 0){
                     this.dlgService.presentConfirm('Actualizar version', 'Hay una nueva version ¿Desea actualizar?', () => {
-
+                        this.gotoMarket();
                     });
                 }
             });
@@ -404,6 +406,11 @@ export class MainService {
     private didListo() {
         console.log('DID LISTO!');
         this.cargar_mensajes();
+    }
+
+    private gotoMarket() {
+        let appId = 'com.survoz.opecalc';
+        this.market.open(appId);
     }
 
 
