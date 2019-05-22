@@ -12,6 +12,7 @@ import { AdmobFreeService } from '../services/admobfree.service';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Mensaje } from '../classes/mensaje';
 import { Market } from '@ionic-native/market/ngx';
+import { Platform } from 'ionic-angular';
 
 
 
@@ -44,7 +45,8 @@ export class MainService {
         public fcmService: FcmService,
         private admobFreeService: AdmobFreeService,
         private appVersion: AppVersion,
-        private market: Market
+        private market: Market,
+        private platform: Platform,
     ) {
 
         console.log('Inicializando servicio MainService');
@@ -69,12 +71,12 @@ export class MainService {
 
                 console.log('APP-VERSION-NUMBER-REMOTA: ' + version_rem);
 
-                if(comp < 0){
+                if (comp < 0) {
                     this.dlgService.presentConfirm('Actualizar version', 'Hay una nueva version ¿Desea actualizar?', () => {
                         this.gotoMarket();
                     });
                 }
-            });
+            }, false);
 
         });
 
@@ -410,7 +412,14 @@ export class MainService {
 
     private gotoMarket() {
         let appId = 'com.survoz.opecalc';
-        this.market.open(appId);
+
+        if (this.platform.is('android')) {
+            this.market.open(appId);
+        } else {
+            // TODO: Añadir id IOS
+            this.market.open('id123456789');
+        }
+
     }
 
 

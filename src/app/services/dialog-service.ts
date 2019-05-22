@@ -69,23 +69,25 @@ export class DialogService {
 
     async presentLoading(mensaje) {
         this.isLoading = true;
-        console.log('Presenting...');
+        // console.log('Presenting...');
         return await this.loadingCtrl.create({
             message: mensaje,
             duration: 5000,
         }).then(a => {
             a.present().then(() => {
-                console.log('presented');
+                // console.log('presented');
                 if (!this.isLoading) {
-                    a.dismiss().then(() => console.log('abort presenting'));
+                    a.dismiss().then(() => {  /* console.log('abort presenting')); */ });
                 }
             });
         });
     }
 
     async dimissLoading() {
-        this.isLoading = false;
-        return await this.loadingCtrl.dismiss().then(() => console.log('dismissed'));
+        if (this.isLoading) {
+            this.isLoading = false;
+            return await this.loadingCtrl.dismiss().then(() => { /* console.log('dismissed')); */ });
+        }
     }
 
     async presentDiasReparto(cb = null) {

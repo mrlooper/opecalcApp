@@ -27,6 +27,8 @@ import { Firebase } from '@ionic-native/firebase/ngx';
 import { FcmService } from './services/fcm.service';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Market } from '@ionic-native/market/ngx';
+import { Platform } from 'ionic-angular';
+
 
 const config = {
   apiKey: 'AIzaSyC4a0iRyN9SW8wcwGVmU_575KxIL6Og6OA',
@@ -61,6 +63,7 @@ Native Advanced Video [ca-app-pub-3940256099942544/1044960115]
     AngularFirestoreModule
   ],
   providers: [
+    Platform,
     InAppBrowser,
     StatusBar,
     SplashScreen,
