@@ -11,17 +11,17 @@
       <ion-content main-menu>
         <ion-list no-margin no-padding lines="none">
 
-          <!-- MIS PLANTILLAS -->
-          <ion-item routerLink="/listado-plantillas-usuario" routerDirection="forward" (click)="onGoto()">
-            <ion-icon name="today" icon-menu-small></ion-icon>
-            <ion-label>Mis Plantillas</ion-label>
-          </ion-item>
-
           <!-- MENSAJES -->
           <ion-item routerLink="/listado-mensajes" routerDirection="forward" (click)="onGoto()">
             <ion-icon name="mail" *ngIf="mS.num_mensajes_pendientes == 0" icon-menu-small></ion-icon>
             <ion-icon name="mail-unread" *ngIf="mS.num_mensajes_pendientes > 0" icon-menu-small></ion-icon>
             <ion-label>Mensajes <span *ngIf="mS.num_mensajes_pendientes > 0">({{ mS.num_mensajes_pendientes }}) </span></ion-label>
+          </ion-item>
+
+          <!-- MIS PLANTILLAS -->
+          <ion-item routerLink="/listado-plantillas-usuario" routerDirection="forward" (click)="onGoto()">
+            <ion-icon name="today" icon-menu-small></ion-icon>
+            <ion-label>Mis Plantillas</ion-label>
           </ion-item>
 
           <!-- OPEs -->
