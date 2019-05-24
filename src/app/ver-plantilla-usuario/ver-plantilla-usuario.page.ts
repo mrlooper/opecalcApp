@@ -28,6 +28,16 @@ export class VerPlantillaUsuarioPage implements OnInit {
     this.navCtrl.navigateForward('editar-plantilla-usuario/' + this.id_plantilla);
   }
 
+  onEliminar() {
+    this.dialogCtrl.presentConfirm('Confirmar', '¿Está seguro?', () => {
+      this.mS.api_eliminar_plantilla_usuario(this.id_plantilla, (data) => {
+        if (data.codigo == 0) {
+          this.navCtrl.pop();
+        }
+      });
+    });
+  }
+
   cargarPlantilla() {
 
     this.mS.api_obtener_plantilla_usuario(this.id_plantilla, (data) => {
@@ -46,7 +56,7 @@ export class VerPlantillaUsuarioPage implements OnInit {
   ngOnInit() {
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.cargarPlantilla();
     this.mS.showAds();
   }

@@ -230,6 +230,19 @@ export class MainService {
         }, mostrar_dialogo);
     }
 
+    api_eliminar_plantilla_usuario(id_plantilla, cb = null, mostrar_dialogo = true) {
+        let args = {
+            'version': this.version,
+            'cid': this.did,
+            'fcmtk': this.fcmService.token,
+            'id-plantilla': id_plantilla
+        };
+
+        this.http_post_api('eliminar-plantilla-usuario', args, function (data) {
+            cb && cb(data);
+        }, mostrar_dialogo);
+    }
+
     api_leer_mensaje(id_mensaje, cb = null, mostrar_dialogo = true) {
         let args = {
             'version': this.version,
