@@ -47,7 +47,7 @@ export class DetalleExamenPage implements OnInit {
   }
 
   gotoURL(url) {
-    let browser = this.iab.create(url, '_blank');
+    let browser = this.iab.create(url, '_system');
   }
 
   ngOnInit() {
