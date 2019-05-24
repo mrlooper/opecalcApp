@@ -51,6 +51,7 @@ export class InicioPage implements OnInit {
   }
 
   ngOnInit() {
+    this.mS.showAdsBanner();
   }
 
 }
