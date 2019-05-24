@@ -44,6 +44,13 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
           p.cargarJson(data.plantillas[i]);
           this.plantillas.push(p);
         }
+
+        if(this.plantillas.length == 0){
+          this.dialogCtrl.presentConfirm('Nueva plantilla', 'No tienes ninguna plantilla ¿Quieres crear una?', () => {
+            this.navCtrl.navigateForward('listado-administraciones/nueva-plantilla');
+          });
+        }
+
       } else {
         console.error('Error cargando plantillas usuario: ' + data.desc);
       }
