@@ -182,7 +182,7 @@ export class MainService {
         this.num_mensajes_pendientes = 0;
         for (let i = 0; i < this.mensajes.length; i++) {
             m = this.mensajes[i];
-            if(m.pendiente){
+            if (m.pendiente) {
                 this.num_mensajes_pendientes++;
             }
 
@@ -424,6 +424,16 @@ export class MainService {
 
     }
 
+    showAdsBanner() {
+
+        if (AppSettings.SHOW_ADS) {
+            this.showBanner();
+        } else {
+            console.warn('Anuncios desactivados');
+        }
+
+    }
+
     mostrarAvisoNuevosMensajes() {
         if (!this.aviso_nuevos_mensajes && this.num_mensajes_pendientes > 0) {
             let mensaje = 'Tiene ' + this.num_mensajes_pendientes + ' pendientes. ¿Desea verlos?';
@@ -431,9 +441,9 @@ export class MainService {
                 this.aviso_nuevos_mensajes = true;
                 this.navCtrl.navigateForward('listado-mensajes');
             },
-            () => {
-                this.aviso_nuevos_mensajes = true;
-            });
+                () => {
+                    this.aviso_nuevos_mensajes = true;
+                });
         }
     }
 
