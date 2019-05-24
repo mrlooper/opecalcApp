@@ -13,8 +13,8 @@ export const AppSettings = Object.freeze({
     'MAP_KEY': {
         'apiKey': 'AIzaSyA4-GoZzOqYTvxMe52YQZch5JaCFN6ACLg'
     },
-    'API_URL': 'http://opecalc/api/',
-    /*'API_URL': 'http://api.opecalc.es/api/',*/
+    /*'API_URL': 'http://opecalc/api/',*/
+    'API_URL': 'http://api.opecalc.es/api/',
     'APP_URL': 'http://apecalc/app/',
     'ROWS_PER_PAGE': 20
 });

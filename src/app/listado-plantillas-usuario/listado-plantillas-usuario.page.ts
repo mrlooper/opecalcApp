@@ -45,7 +45,7 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
           this.plantillas.push(p);
         }
 
-        if(this.plantillas.length == 0){
+        if (this.plantillas.length == 0) {
           this.dialogCtrl.presentConfirm('Nueva plantilla', 'No tienes ninguna plantilla ¿Quieres crear una?', () => {
             this.navCtrl.navigateForward('listado-administraciones/nueva-plantilla');
           });
@@ -60,7 +60,7 @@ export class ListadoPlantillasUsuarioPage implements OnInit {
   ngOnInit() {
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.cargarPlantillas();
     this.mS.showAds();
   }
