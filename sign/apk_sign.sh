@@ -3,7 +3,7 @@
 JARSIGNER="/usr/src/android-studio/jre/bin/jarsigner"
 ZIPALIGN="/root/Android/Sdk/build-tools/28.0.3/zipalign"
 APK="app-release-unsigned.apk"
-APK_SIGNED="app-release-signed.apk"
+APK_SIGNED="opecalc-release-signed.apk"
 KEY="my-release-key.keystore"
 
 rm -f *.apk
