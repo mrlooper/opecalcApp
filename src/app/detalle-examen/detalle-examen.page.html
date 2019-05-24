@@ -31,6 +31,20 @@
 
     </ion-row>
 
+    <!-- CUADERNILLO -->
+    <ion-row *ngIf="examen.cuadernillo_url">
+
+      <ion-col size="12">
+
+        <button boton-full ion-button form-button clear button-clear round outline (click)="onClickCuadernillo()">
+          <ion-icon name="document"></ion-icon>
+          CUADERNILLO EXAMEN
+        </button>
+
+      </ion-col>
+
+    </ion-row>    
+
     <!-- PLANTILLA PROVISIONAL -->
     <ion-row *ngIf="examen.plantilla_provisional_id">
 

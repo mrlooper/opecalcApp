@@ -30,6 +30,10 @@ export class DetalleExamenPage implements OnInit {
     this.gotoURL(this.examen.convocatoria_url);
   }
 
+  onClickCuadernillo() {
+    this.gotoURL(this.examen.cuadernillo_url);
+  }
+
   onClickPlantillaProvisional() {
     this.navCtrl.navigateForward('ver-plantilla/' + this.examen.plantilla_provisional_id);
   }

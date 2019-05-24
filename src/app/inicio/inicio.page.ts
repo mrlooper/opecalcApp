@@ -36,6 +36,10 @@ export class InicioPage implements OnInit {
     this.navCtrl.navigateForward('/listado-administraciones/detalle-examen');
   }
 
+  onClickAcercade() {
+    this.navCtrl.navigateForward('about');
+  }
+
   onClick() {
     console.log('Mostrando Banner');
     this.admobFreeService.BannerAd();
