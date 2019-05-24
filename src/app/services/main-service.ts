@@ -65,25 +65,7 @@ export class MainService {
         this.cargar_datos();
 
         /* Version */
-        this.version = '-';
-        this.appVersion.getVersionNumber().then(version => {
-            this.version = version;
-            console.log('APP-VERSION-NUMBER-LOCAL: ' + version);
-
-            this.api_obtener_version_apk((data) => {
-                let version_rem = data.version;
-                let comp = this.compararVersiones(this.version, version_rem);
-
-                console.log('APP-VERSION-NUMBER-REMOTA: ' + version_rem);
-
-                if (comp < 0) {
-                    this.dlgService.presentConfirm('Actualizar version', 'Hay una nueva version ¿Desea actualizar?', () => {
-                        this.gotoMarket();
-                    });
-                }
-            }, false);
-
-        });
+        this.version = AppSettings.VERSION;
 
     }
 
