@@ -3,8 +3,8 @@ export const AppSettings = Object.freeze({
     'SHOW_ADS': true,
     'ADMOB_TESTING': false,
     'TIME_BETWEEN_INTERSITIALAD': 300,
-    'ADMOB_BANNER_ID': 'ca-app-pub-3940256099942544/6300978111',
-    'ADMOB_INTERSITIAL_ID': 'ca-app-pub-3940256099942544/1033173712',
+    'ADMOB_BANNER_ID': 'ca-app-pub-5095935372980249/4387325319',
+    'ADMOB_INTERSITIAL_ID': 'ca-app-pub-5095935372980249/7233637040',
     'SUBSCRIBE': false,
     'TOAST': {
         'duration': 1000,
