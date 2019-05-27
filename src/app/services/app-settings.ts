@@ -1,5 +1,5 @@
 export const AppSettings = Object.freeze({
-    'VERSION': '0.0.1',
+    'VERSION': '0.0.2',
     'SHOW_ADS': true,
     'ADMOB_TESTING': false,
     'TIME_BETWEEN_INTERSITIALAD': 300,
